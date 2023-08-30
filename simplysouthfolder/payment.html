@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Gateway</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #3b3737;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .payment-container {
+    background-color: #f2ae26;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    padding: 40px;
+  }
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .animation-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+  }
+  .animation-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: conic-gradient(from -90deg, #2c9a13 0%, #a2debb 100%);
+    border-radius: 50%;
+    animation: rotate 2s linear infinite;
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .cash-on-delivery {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 12px 25px;
+    background: linear-gradient(to right,  #000000, #494a4a);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  .cash-on-delivery:hover {
+    background: linear-gradient(to right, #494a4a, #000000);
+  }
+  .order-placed{
+    text-decoration: none;
+  }
+  .submit-btn {
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  .submit-btn:hover {
+    background-color: #219351;
+  }
+</style>
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Select Payment Method</h2>
+    <div class="animation-container">
+      <div class="animation-circle"></div>
+    </div>
+    <a href="order-placed.html" class="order-placed"><button class="cash-on-delivery">Pay with Cash on Delivery</button></a>
+    <!-- <button class="submit-btn">Submit Payment</button> -->
+  </div>
+</body>
+</html>

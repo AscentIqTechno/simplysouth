@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Simply South</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="images/logobgrem.png">
+
+    <!-- googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@200;300;400;500;600;700&family=Poppins:wght@500&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- custom files -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/responsive-style.css">
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!-- Navbar section -->
+    <header class="header-wrapper">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logobgrem.png" class="img-fluid" alt="logo">
+                    <h2 class="logoaside">Simply South</h2>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <i class="fas fa-stream navbar-toggler-icon"></i>
+
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav menu-navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="franchise.html">Franchise</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sociality.html">Sociality</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#reviews">Reviews</a>
+                        </li> -->
+                        <!-- <li class="nav-item mt-3 mt-lg-0">
+                            <a class="main-btn" href="#">Order Now</a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navbar section exit -->
+
+    <!-- banner section start -->
+    <section class="contact-html-class-banner">
+        <div class="container">
+            <div class="banner-content">
+                <!-- <img src="./images/aboutpage/abtimg.png" alt="" class="abt-banner-image"> -->
+            </div>
+        </div>
+    </section>
+    <!-- banner section end  -->
+
+    <!-- selector section start  -->
+    <section class="selector-container">
+        <h1 class="locate-heading">Locate Us</h1>
+        
+        <div class="selector">
+          <label for="city">Select City:</label>
+          <select id="city" name="city">
+            <option value="city1">Greater Noida</option>
+            <!-- <option value="city2">City 2</option>
+            <option value="city3">City 3</option> -->
+            <!-- Add more city options as needed -->
+          </select>
+        </div>
+        
+        <div class="selector">
+          <label for="outlet">Select Outlet:</label>
+          <select id="outlet" name="outlet">
+            <option value="outlet1">Jagat Farm</option>
+            <option value="outlet2">Sector-137</option>
+            <!-- <option value="outlet3">Outlet 3</option> -->
+            <!-- Add more outlet options as needed -->
+          </select>
+        </div>
+      
+        <button class="search-button">Search</button>
+      </section>
+
+    <!-- contact us section start  -->
+    <section class="contact-html-class-contactus">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center pb-5">
+                    <h2 class="section-title">Feedback</h2>
+                    <p class="section-subtitle">Your opinion our priority</p>
+                </div>
+                <div class="col-12 contact-form">
+                    <div class="row">
+                        <div class="col-lg-7 mb-5">
+                            <form class="row g-3" id="contact-form">
+                                <div class="col-md-6 mb-4">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name *" required="">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email *" required="">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <input type="text" class="form-control" id="address" placeholder="Your Address *" required="">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <input type="number" class="form-control" id="phone" placeholder="Your Phone *" required="">
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <textarea id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn main-btn">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-5 mb-5">
+                            <div class="content-box ms-sm-5">
+                                <ul class="info-box clearfix">
+                                    <li>
+                                        <i class="fas fa-phone-alt"></i>
+                                        <p>Any Questions? Call us</p>
+                                        <div class="phonenumberclass">
+                                            <a href="#">+91 9999006858</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-envelope-open"></i>
+                                        <p>Any Questions? Email us</p>
+                                        <div class="contactemailclass">
+                                            <a href="#">contact@simplysouth.co</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- <section class="contact-html-class-contactus">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center pb-5">
+                    <h2 class="section-title">Feedback</h2>
+                    <p class="section-subtitle">Your opinion our priority</p>
+                </div>
+                <div class="col-12 contact-form">
+                    <div class="row">
+                        <div class="col-lg-7 mb-5">
+                            <form class="row g-3">
+                                <div class="col-md-6 mb-4">
+                                    <input type="text" class="form-control" placeholder="Your Name *" required="">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <input type="email" class="form-control" placeholder="Your Email *" required="">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <input type="text" class="form-control" placeholder="Your Address *" required="">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <input type="number" class="form-control" placeholder="Your Phone *" required="">
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn main-btn">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-5 mb-5">
+                            <div class="content-box ms-sm-5">
+                                <ul class="info-box clearfix">
+                                    <li>
+                                        <i class="fas fa-phone-alt"></i>
+                                        <p>Any Questions? Call us</p>
+                                        <div class="phonenumberclass">
+                                            <a href="#">+91 9999006858</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-envelope-open"></i>
+                                        <p>Any Questions? Email us</p>
+                                        <div class="contactemailclass">
+                                            <a href="#">contact@simplysouth.co</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- contact us section end  -->
+
+    <!-- Footer section -->
+    <section id="contact" class="footer_wrapper mt-3 mt-md-0 pb-0">
+        <div class="container pb-3">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <h5>Our Location</h5>
+                    <p class="ps-0">We Simply South are located at various places all over the India, we can be near your resident, your office, even in your home town</p>
+                    <div class="contact-info">
+                        <ul class="list-unstyled">
+                            <li><a href="#"><i class="fa fa-home me-3"></i> No. 96, Gurugram</a></li>
+                            <li><a href="#"><i class="fa fa-phone me-3"></i>+91-8580410510</a></li>
+                            <li><a href="#"><i class="fa fa-envelope me-3"></i>simplysouth.co</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>More Links</h5>
+                    <ul class="link-widget p-0">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Our Locations</a></li>
+                        <!-- <li><a href="#">Guarantee</a></li> -->
+                        <li><a href="#">Buy Gift Card</a></li>
+                        <li><a href="#">Write a Review</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Demo Links</h5>
+                    <ul class="link-widget p-0">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Our Locations</a></li>
+                        <!-- <li><a href="#">Guarantee</a></li> -->
+                        <li><a href="#">Buy Gift Card</a></li>
+                        <li><a href="#">Write a Review</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Newsletter</h5>
+                    <div class="form-group mb-4">
+                        <input type="email" class="form-control bg-transparent" placeholder="enter your email here">
+                        <button type="submit" class="main-btn rounded-2 mt-3 border-white text-white">Subscribe</button>
+                    </div>
+                    <h5>Stay Connected</h5>
+                    <ul class="social-network d-flex align-items-center p-0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright-section">
+            <p>Copyright <a href="#">Â© Simply South.</a> All Rights Reserved</p>
+        </div>
+    </section>
+    <!-- Footer section exit -->
+
+    <!-- Bootstrap 5 JS CDN Links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Custom Js Link -->
+    <script src="JS/main.js"></script>
+</body>
+
+</html>

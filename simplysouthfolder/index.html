@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply South</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="images/logobgrem.png">
+
+    <!-- googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@200;300;400;500;600;700&family=Poppins:wght@500&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- custom files -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/responsive-style.css">
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!-- Navbar section -->
+    <header class="header-wrapper">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logobgrem.png" class="img-fluid" alt="logo">
+                    <h2 class="logoaside">Simply South</h2>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <i class="fas fa-stream navbar-toggler-icon"></i>
+
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav menu-navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="franchise.html">Franchise</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sociality.html">Sociality</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#reviews">Reviews</a>
+                        </li> -->
+                        <li class="nav-item mt-3 mt-lg-0">
+                            <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Order Now</button></li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navbar section exit -->
+
+    <!-- login sign up pop up start  -->
+    <!-- <div id='login-form'class='login-page'>
+        <div class="form-box">
+            <div class='button-box'>
+                <div id='btn'></div>
+                <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+            </div>
+            <form id='login' class='input-group-login'>
+                <input type='text'class='input-field'placeholder='Email Id' required >
+        <input type='password'class='input-field'placeholder='Enter Password' required>
+        <input type='checkbox'class='check-box'><span>Remember Password</span>
+        <button type='submit'class='submit-btn'>Log in</button>
+     </form>
+     <form id='register' class='input-group-register'>
+         <input type='text'class='input-field'placeholder='First Name' required>
+         <input type='text'class='input-field'placeholder='Last Name ' required>
+         <input type='email'class='input-field'placeholder='Email Id' required>
+         <input type='password'class='input-field'placeholder='Enter Password' required>
+         <input type='password'class='input-field'placeholder='Confirm Password'  required>
+         <input type='checkbox'class='check-box'><span>I agree to the terms and                                                   conditions</span>
+                <button type='submit'class='submit-btn'>Register</button>
+         </form>
+        </div>
+    </div>
+</div> -->
+<div id='login-form' class='login-page'>
+    <div class="form-box">
+        <div class='button-box'>
+            <div id='btn'></div>
+            <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
+            <button type='button' onclick='register()' class='toggle-btn'>Register</button>
+        </div>
+        <form id='login' class='input-group-login' onsubmit="return performLogin();">
+            <input type='email' id="email" class='input-field' placeholder='Email Id' required>
+            <input type='password' id="password" class='input-field' placeholder='Enter Password' required>
+            <input type='checkbox' class='check-box'><span class="loginspan">Remember Password</span>
+            <button type='submit' class='submit-btn'>Log in</button>
+        </form>
+        <form id='register' class='input-group-register'>
+            <input type='text' id="firstname" class='input-field' placeholder='First Name' required>
+            <input type='text' id="lastname" class='input-field' placeholder='Last Name' required>
+            <input type='number' id="mobile" class='input-field' placeholder='Enter phone number' required>
+            <input type='text' id="address" class='input-field' placeholder='Enter full address' required>
+            <input type='email' id="email" class='input-field' placeholder='Email Id' required>
+            <input type='password' id="password" class='input-field' placeholder='Enter Password' required>
+            <input type='checkbox' id="remember" class='check-box'><span class="loginspan">I agree to the terms and conditions</span>
+            <button type='submit' class='submit-btn'>Register</button>
+        </form>
+    </div>
+</div>
+
+
+    <!-- login sign up pop up end  -->
+
+    <!-- Banner section -->
+    <section id="home" class="banner_wrapper p-0">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url(./images/slider/slider\ 1.jpeg);">
+                    <div class="slide-caption text-center">
+                        <div>
+                            <h1>Simply South welcomes you</h1>
+                            <p>
+                                "Savor authentic South Indian flavors in every bite. A culinary journey of aromatic spices, dosa delights, and rich curries awaits."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url(./images/slider/slider\ 2.jpeg);">
+                    <div class="slide-caption text-center">
+                        <div>
+                            <h1>Welcome to the South Indian Haven</h1>
+                            <p>"Savor the symphony of flavors at our South Indian haven. Dosa dreams, spicy delights, and coconut crescendos await your palate!"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url(./images/slider/slider\ 3.jpeg);">
+                    <div class="slide-caption text-center">
+                        <div>
+                            <h1>We are Simply South</h1>
+                            <p>"Embark on a gastronomic journey through South India. Our vibrant dishes tell tales of tradition, served with a modern twist." </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url(./images/slider/slider\ 4.jpeg);">
+                    <div class="slide-caption text-center">
+                        <div>
+                            <h1>Discover South India on Your Plate</h1>
+                            <p> "A Fusion of Tradition and Innovation. Indulge in Timeless Flavors with a Contemporary Flair!" </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url(./images/slider/slider\ 5.jpeg);">
+                    <div class="slide-caption text-center">
+                        <div>
+                            <h1>Savor South India</h1>
+                            <p> "Where Culinary Heritage Meets Innovation. Delight in Exquisite Dishes, Infused with Tradition and Crafted with Creativity." </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!--<div class="container booking-area">
+            <p class="container-para">Check Availability for Dining</p>
+            <form class="row">
+                <div class="col-lg mb-3 mb-lg-0">
+                    <input type="date" class="form-control" placeholder="Date">
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <input type="time" class="form-control" placeholder="Time">
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <select class="form-select">
+                        <option selected>Adults</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <select class="form-select">
+                        <option selected>Children</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <button type="submit" class="main-btn rounded-2 px-lg-3">Check Availability</button>
+                </div>
+            </form>
+        </div>--->
+    </section>
+    <!-- Banner section exit -->
+
+    <!-- About section -->
+    <section id="about" class="about_wrapper">
+        <div class="container">
+            <div class="row flex-lg-row flex-column-reverse ">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h3>Welcome to <span>Simply <br class="d-none d-lg-block">
+                            South</span> </h3>
+                    <p>We started in May 2009. Started by Shankar Shrinivas and Rashi Shrinivas
+                        It is located in greater noida which is city having a large institutional area comprising of several colleges, schools and university. He himself was a student of a one of the colleges in the same institutional area. Keeping this is mind we simply south got started which can cater to students.
+                        In 2012 this restaurant became a 35 seater and a further expansion in 2014 has helped it become a 60 seater restaurant today.
+                        We are the first exclusive south Indian restaurant in Greater noida.</p>
+                    <a href="about.html" class="main-btn mt-4">Explore</a>
+                </div>
+                <div class="col-lg-6 mb-4 mb-lg-0 ps-lg-4 text-center">
+                    <img decoding="async" src="images/about pic.png" class="img-fluid" alt="About Us">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- About section exit -->
+
+    <!-- Menu section -->
+    <section id="menu" class="menu_wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>What can we order for you</h6>
+                    <h3>Our Featured Menu</h3>
+                </div>
+            </div>
+            <div class="row m-0">
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <div class="menu-item">
+                        <img decoding="async" src="./images/menu/img 1.png" class="img-fluid">
+                        <div class="menu-item-wrap">
+                            <div class="menu-content">
+                                <h5 class="text-white mb-lg-5 text-decoration-underline">Royal Menu</h5>
+                                <p class="text-white">Discover more of our favourite dishes from our new collection that
+                                    are destined to be eaten and loved immediately</p>
+                                <p class="text-white fw-bold mt-lg-4">Starting at RS150</p>
+                                <a class="main-btn border-white text-white mt-lg-5" href="#">Order Now</a>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <div class="menu-item">
+                        <img decoding="async" src="./images/menu/img 2.png" class="img-fluid">
+                        <div class="menu-item-wrap">
+                            <div class="menu-content">
+                                <h5 class="text-white mb-lg-5 text-decoration-underline">Chef Special</h5>
+                                <p class="text-white">Discover Our chef special dishes from our collection that
+                                    are made with passionate and love of chef</p>
+                                <p class="text-white fw-bold mt-lg-4">starting at RS170</p>
+                                <a class="main-btn border-white text-white mt-lg-5" href="#">Order Now</a>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <div class="menu-item">
+                        <img decoding="async" src="./images/menu/img 3.png" class="img-fluid">
+                        <div class="menu-item-wrap">
+                            <div class="menu-content">
+                                <h5 class="text-white mb-lg-5 text-decoration-underline">Light Food</h5>
+                                <p class="text-white">Discover our snacks and light food dishes from our collection that you can take anytime from pre lunch to evening snacks</p>
+                                <p class="text-white fw-bold mt-lg-4">Starting at RS100</p>
+                                <a class="main-btn border-white text-white mt-lg-5" href="#">Order Now</a>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- menu Section Exit -->
+
+    <!-- Services section -->
+    <section id="services" class="services_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>We Are Here For You</h6>
+                    <h3>Our Awesome Services</h3>
+                </div>
+            </div>
+            <div class="row align-items-center service-item-wrap">
+                <div class="col-lg-7 p-lg-0">
+                    <!--Service Area Start-->
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="dine-in" role="tabpanel">
+                            <img decoding="async" src="./images/services/service1.webp" width="765px" height="660px" alt="" class="res-des">
+                        </div>
+                        <div class="tab-pane fade" id="take-out" role="tabpanel">
+                            <img decoding="async" src="./images/services/service2.webp" width="765px" height="660px" alt="" class="res-des">
+                        </div>
+                        <div class="tab-pane fade" id="pick-up" role="tabpanel">
+                            <img decoding="async" src="images/services/service3.webp" width="765px" height="660px" alt="" class="res-des">
+                        </div>
+                        <div class="tab-pane fade" id="restaurant" role="tabpanel">
+                            <img decoding="async" src="./images/services/service4.webp" width="765px" height="660px" alt="" class="res-des">
+                        </div>
+                    </div>
+                    <!--Service Area End-->
+                </div>
+                <div class="col-lg-5 position-relative">
+                    <!--Service Tab Menu Area Start-->
+                    <div class="service-menu-area">
+                        <ul class="nav">
+                            <li>
+                                <a data-bs-toggle="tab" href="#dine-in" class="active">
+                                    <span class="service-icon">
+                                        <img decoding="async" src="./images/services/service-icon1.webp" alt="" class="invert-class">
+                                    </span>
+                                    <h5>Dine In</h5>
+                                    <p><span>Dine in </span>: Reserve a table online so we know to expect you </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tab" href="#take-out">
+                                    <span class="service-icon">
+                                        <img decoding="async" src="./images/services/service-icon2.webp" alt="" class="invert-class">
+                                    </span>
+                                    <h5>Take Out</h5>
+                                    <p><span>Take Out</span>: Choose from our selection and we will pack it up for you </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tab" href="#pick-up">
+                                    <span class="service-icon">
+                                        <img decoding="async" src="./images/services/service-icon3.webp" alt="" class="invert-class">
+                                    </span>
+                                    <h5>Pick Up</h5>
+                                    <p><span>Pick Up</span> Call or message ahead, and we will have your order ready</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tab" href="#restaurant">
+                                    <span class="service-icon">
+                                        <img decoding="async" src="./images/services/service-icon5.webp" alt="">
+                                    </span>
+                                    <h5>Restaurant</h5>
+                                    <p><span>Restaurant</span> Enjoy the south feel even in north while sitting in our restaurant  </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Service Tab Menu Area End-->
+                </div>
+            </div>
+        </div>
+        <div class="counter mt-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h1>
+                            <span id="count1"></span>+
+                        </h1>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h1>
+                            <span id="count2"></span>+
+                            </h2>
+                            <p>New Friendships</p>
+                    </div>
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h1>
+                            <span id="count3"></span>+
+                            </h2>
+                            <p>Five Start Ratings</p>
+                    </div>
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h1>
+                            <span id="count4"></span>+
+                            </h2>
+                            <p>Served Breakfast</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services section Exit -->
+
+    <!-- Team section -->
+   <!----- <section id="team" class="team_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>What we can do for you</h6>
+                    <h3>Our Special Staff</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-0 rounded-3">
+                        <img decoding="async" src="images/team/team1.webp" class="img-fluid rounded-3" />
+                        <div class="team-info">
+                            <h5>DIGA</h5>
+                            <p>Manager</p>
+                            <ul class="social-network">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-0 rounded-3">
+                        <img decoding="async" src="images/team/team2.webp" class="img-fluid rounded-3" />
+                        <div class="team-info">
+                            <h5>Krishangi</h5>
+                            <p>Chif Reciption Officer</p>
+                            <ul class="social-network">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-0 rounded-3">
+                        <img decoding="async" src="images/team/team3.webp" class="img-fluid rounded-3" />
+                        <div class="team-info">
+                            <h5>Siddharth</h5>
+                            <p>Master Chef</p>
+                            <ul class="social-network">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-0 rounded-3">
+                        <img decoding="async" src="images/team/team4.webp" class="img-fluid rounded-3" />
+                        <div class="team-info">
+                            <h5>Om</h5>
+                            <p>Waiter</p>
+                            <ul class="social-network">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <!-- Team Section Exit  -->
+
+    <!-- Gallery section -->
+    <section id="gallery" class="gallery_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>Best Pictures Of Our Dishes</h6>
+                    <h3>Our Gallery</h3>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <img decoding="async" src="./images/gallery/1.webp" class="img-fluid w-100">
+                    <div class="gallery-item-content"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <img decoding="async" src="./images/gallery/2.webp" class="img-fluid w-100">
+                    <div class="gallery-item-content"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <img decoding="async" src="./images/gallery/3.webp" class="img-fluid w-100">
+                    <div class="gallery-item-content"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 gallery-item">
+                    <img decoding="async" src="./images/gallery/4.webp" class="img-fluid w-100">
+                    <div class="gallery-item-content"></div>
+                </div>
+                <div class="col-md-6 gallery-item">
+                    <img decoding="async" src="./images/gallery/5.webp" class="img-fluid w-100">
+                    <div class="gallery-item-content"> </div>
+                </div>
+                <div class="col-md-6 gallery-item">
+                    <img decoding="async" src="./images/gallery/6.webp" class="img-fluid w-100">
+                    <div class="gallery-item-content"> </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section Exit -->
+
+    <!-- Pricing section -->
+    <section id="price" class="price_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>Best & Affordable Price for you</h6>
+                    <h3>Our Pricing</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-4 text-center rounded-3">
+                        <h5 class="text-decoration-underline mb-4">DOSA</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>Plain Dosa>
+                            </li>
+                            <li>
+                                <p>Masala Dosa</p>
+                            </li>
+                            <li>
+                                <p>Butter Paneer Dosa</p>
+                            </li>
+                            <li>
+                                <p>Capsicum Onion Dosa>
+                            </li>
+                        </ul>
+                        <hr />
+                        <h3>Starting at RS140<sub class="fs-6 fw-normal">/Plate</sub></h3>
+                        <a href="#" class="main-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-4 text-center rounded-3">
+                        <h5 class="text-decoration-underline mb-4">Uttapam</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>Onion Uttapam</p>
+                            </li>
+                            <li>
+                                <p>Tomato Uttapam</p>
+                            </li>
+                            <li>
+                                <p>Mix veg Uttapam</p>
+                            </li>
+                            <li>
+                                <p>Mirchi Uttapam</p>
+                            </li>
+                        </ul>
+                        <hr />
+                        <h3>Starting at RS160<sub class="fs-6 fw-normal">/Plate</sub></h3>
+                        <a href="#" class="main-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-4 text-center rounded-3">
+                        <h5 class="text-decoration-underline mb-4">Annam</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>Sambhar Rice</p>
+                            </li>
+                            <li>
+                                <p>Curd Rice</p>
+                            </li>
+                            <li>
+                                <p>Rassam Rice</p>
+                            </li>
+                            <li>
+                                <p>Lemon Rice</p>
+                            </li>
+                        </ul>
+                        <hr />
+                        <h3>Starting at RS130<sub class="fs-6 fw-normal">/Plate</sub></h3>
+                        <a href="#" class="main-btn">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-4 text-center rounded-3">
+                        <h5 class="text-decoration-underline mb-4">Snacks</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <p>Sambhar Idli</p>
+                            </li>
+                            <li>
+                                <p>Sambhar Vada</p>
+                            </li>
+                            <li>
+                                <p>Fried Idli</p>
+                            </li>
+                            <li>
+                                <p>Mini Idli</p>
+                            </li>
+                        </ul>
+                        <hr />
+                        <h3>Starting at RS100<sub class="fs-6 fw-normal">/Plate</sub></h3>
+                        <a href="#" class="main-btn">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section Exit  -->
+
+    <!-- blog section -->
+    <section id="blog" class="blog_wrapper pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>Say Hello TO Our Visiters</h6>
+                    <h3>Reviews</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card p-0 border-0 rounded-0">
+                        <img decoding="async" src="images/blog/blog3.webp" alt="">
+                        <div class="blog-content bg-white p-4">
+                            <h5 class="text-decoration-underline mb-4">Verified Customer</h5>
+                            <h6>Rupali Verma -18 august 2023</h6>
+                            <p class="mt-2">"I recently tried the idli sambar at Simply South Restaurant, and it was fantastic! The idlis were soft, and the sambhar had a perfect balance of flavors. The staff service was top-notch too, making the dining experience truly enjoyable. Highly recommended!."
+                            </p>
+                            <a href="#" class="main-btn mt-2">Read More</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card p-0 border-0 rounded-0">
+                        <img decoding="async" src="images/blog/blog2.webp" alt="">
+                        <div class="blog-content bg-white p-4">
+                            <h5 class="text-decoration-underline mb-4">Verified Customer</h5>
+                            <h6>Om - 10 march 2023</h6>
+                            <p class="mt-2">
+                                "Delicious flavors danced on my palate, while the spotless surroundings assured me of their dedication to both taste and cleanliness."
+                            </p>
+                            <a href="#" class="main-btn mt-2">Read More</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- blog Section Exit  -->
+
+    <!-- Footer section -->
+    <section id="contact" class="footer_wrapper mt-3 mt-md-0 pb-0">
+        <div class="container pb-3">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <h5>Our Location</h5>
+                    <p class="ps-0">We Simply South are located at various places all over the India, we can be near your resident, your office, even in your home town</p>
+                    <div class="contact-info">
+                        <ul class="list-unstyled">
+                            <li><a href="#"><i class="fa fa-home me-3"></i> No. 96, Gurugram</a></li>
+                            <li><a href="#"><i class="fa fa-phone me-3"></i>+91-8580410510</a></li>
+                            <li><a href="#"><i class="fa fa-envelope me-3"></i>simplysouth.co</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>More Links</h5>
+                    <ul class="link-widget p-0">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Our Locations</a></li>
+                        <!-- <li><a href="#">Guarantee</a></li> -->
+                        <li><a href="#">Buy Gift Card</a></li>
+                        <li><a href="#">Write a Review</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Demo Links</h5>
+                    <ul class="link-widget p-0">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Delivery</a></li>
+                        <li><a href="#">Our Locations</a></li>
+                        <!-- <li><a href="#">Guarantee</a></li> -->
+                        <li><a href="#">Buy Gift Card</a></li>
+                        <li><a href="#">Write a Review</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Newsletter</h5>
+                    <div class="form-group mb-4">
+                        <input type="email" class="form-control bg-transparent" placeholder="enter your email here">
+                        <button type="submit" class="main-btn rounded-2 mt-3 border-white text-white">Subscribe</button>
+                    </div>
+                    <h5>Stay Connected</h5>
+                    <ul class="social-network d-flex align-items-center p-0">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright-section">
+            <p>Copyright <a href="#">Â© Simply South.</a> All Rights Reserved</p>
+        </div>
+    </section>
+    <!-- Footer section exit -->
+
+    <!-- Bootstrap 5 JS CDN Links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Custom Js Link -->
+    <script src="JS/main.js"></script>
+
+    <!-- custom js for login/sign up  -->
+    <script>
+        var x = document.getElementById('login');
+var y = document.getElementById('register');
+var z = document.getElementById('btn');
+
+function register() {
+    x.style.left = '-400px';
+    y.style.left = '50px';
+    z.style.left = '110px';
+}
+
+function login() {
+    x.style.left = '50px';
+    y.style.left = '450px';
+    z.style.left = '0px';
+}
+
+function performLogin() {
+    // Perform login logic here
+    // If login is successful, redirect to the new page
+     window.location.href = "order-online.html";
+    alert("Login successful!");
+    return true; // Allow form submission
+}
+
+function performRegistration() {
+    // Perform registration logic here
+    // If registration is successful, redirect to the new page
+    window.location.href = "order-online.html";
+    alert("Registration successful!");
+    return true; // Allow form submission
+}
+        
+	</script>
+	<script>
+        var modal = document.getElementById('login-form');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    } 
+};
+        
+
+        
+    </script>
+</body>
+
+</html>
+
